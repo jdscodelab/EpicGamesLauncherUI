@@ -1,0 +1,250 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EpicGamesLauncher.Pages"
+      xmlns:attachedProperties="clr-namespace:EpicGamesLauncher.Attached_Properties"
+      xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
+      xmlns:customControls="clr-namespace:EpicGamesLauncher.CustomControls"
+      x:Class="EpicGamesLauncher.Pages.StorePage"
+      mc:Ignorable="d" 
+      d:DesignHeight="829" d:DesignWidth="1538"
+      Title="StorePage"
+      FontFamily="Brutal Type"
+      Foreground="#FFFFFF">
+    <Page.Resources>
+        <Style 
+            x:Key="SignInPopup"
+            TargetType="{x:Type Border}">
+            <Setter Property="Height" Value="0"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="Background" Value="{StaticResource PopupBackgroundBrush}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Title, RelativeSource={RelativeSource AncestorType=Page, Mode=FindAncestor}}" Value="StorePage">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard Name="ShowSignInPopup">
+                            <Storyboard
+                                SpeedRatio="2">
+                                <DoubleAnimation 
+                                    Storyboard.TargetProperty="Height"
+                                    To="50"
+                                    Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <RemoveStoryboard BeginStoryboardName="ShowSignInPopup"/>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border
+            Grid.Row="0"
+            Style="{StaticResource SignInPopup}">
+            <StackPanel
+    Orientation="Horizontal">
+                <TextBlock
+        Margin="19,0"
+        FontSize="15"
+        Text="You are not signed in. To get access to all Epic Games features, reconnect to the Epic Games network."
+        VerticalAlignment="Center"
+        Foreground="{StaticResource CaptionFontBrush}"/>
+
+                <Button
+        Margin="0,2,0,3"
+        Content="Sign in"
+        Click="ButtonBase_OnClick"
+        Style="{StaticResource PrimaryButtonStyle}"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle
+                HorizontalAlignment="Right"
+                Width="1"
+                Fill="{StaticResource SearchBackgroundBrush}"/>
+
+            <Grid
+                Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="122"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid
+                    Cursor="Hand"
+                    Height="122">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="86"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Path
+                        Data="{StaticResource EpicIcon}"
+                        Style="{StaticResource EpicLogoStyle}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"/>
+
+                    <TextBlock
+                        Grid.Column="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="Epic Games"
+                        Margin="25,0,0,0"/>
+                </Grid>
+
+                <attachedProperties:SideNavigationMenu Grid.Row="1">
+                    <attachedProperties:SideNavigationMenu.MenuButtonsContainer>
+                        <StackPanel Orientation="Vertical">
+                            <attachedProperties:CheckableMenuButton
+                            Content="Home"
+                            Icon="{StaticResource HomeIcon}"
+    Style="{StaticResource SideNavigationCheckableMenuButtonsStyle}"/>
+                            <attachedProperties:CheckableMenuButton
+                            Content="Store"
+                            Icon="{StaticResource StoreIcon}"
+                            Style="{StaticResource SideNavigationCheckableMenuButtonsStyle}"/>
+                            <attachedProperties:CheckableMenuButton
+                            Content="Library"
+                            Icon="{StaticResource LibraryIcon}"
+                            Style="{StaticResource SideNavigationCheckableMenuButtonsStyle}"/>
+                            <attachedProperties:CheckableMenuButton
+                            Content="Unreal                             Engine"
+                            Icon="{StaticResource UnrealEngineIcon}"
+                            Style="{StaticResource SideNavigationCheckableMenuButtonsStyle}"/>
+                        </StackPanel>
+                    </attachedProperties:SideNavigationMenu.MenuButtonsContainer>
+
+                    <attachedProperties:SideNavigationMenu.FooterMenuButtonsContainer>
+                        <StackPanel Orientation="Vertical">
+                            <attachedProperties:BasicMenuButton
+    Content="Downloads"
+    Icon="{StaticResource DownloadsIcon}"
+    Style="{StaticResource SideNavigationBasicMenuButtonsStyle}"/>
+                            <attachedProperties:BasicMenuButton
+    Content="Settings"
+    x:Name="BtnSettings"
+    Icon="{StaticResource SettingsIcon}"
+    Style="{StaticResource SideNavigationBasicMenuButtonsStyle}"
+    Click="BtnSettings_OnClick"/>
+                            <attachedProperties:BasicMenuButton
+    Content="Offline"
+    Icon="{StaticResource OfflineIcon}"
+    Style="{StaticResource SideNavigationBasicMenuButtonsStyle}"/>
+                        </StackPanel>
+                    </attachedProperties:SideNavigationMenu.FooterMenuButtonsContainer>
+                </attachedProperties:SideNavigationMenu>
+            </Grid>
+
+            <Grid
+                Grid.Column="1"
+                Margin="34">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                                         Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="178"/>
+                        <ColumnDefinition Width="417"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" MinWidth="274"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                        FontSize="17"
+                        Text="Sort by:"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="8,0"/>
+
+                    <ComboBox
+                        Grid.Column="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        SelectedIndex="0"
+                        Style="{StaticResource FlatComboBoxStyle1}">
+                        <ComboBoxItem Content="Recent" />
+                        <ComboBoxItem Content="Alphabetical"/>
+                    </ComboBox>
+
+                    <StackPanel
+                        Grid.Column="2"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            FontSize="17"
+                            Text="Filter:"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"/>
+                        <ComboBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            SelectedIndex="0"
+                            Style="{StaticResource FlatComboBoxStyle1}">
+                            <ComboBoxItem Content="All" />
+                            <ComboBoxItem Content="Installed"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="4"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,35,0">
+                        <RadioButton
+                            Content="{StaticResource GridViewIcon}"
+                            FontSize="15"
+                            IsChecked="True"
+                            GroupName="SwitchViewButtons"
+                            Style="{StaticResource IconOnlyRadioButtonStyle}"/>
+                        <RadioButton
+                            Content="{StaticResource ListViewIcon}"
+                            FontSize="18"
+                            GroupName="SwitchViewButtons"
+                            Style="{StaticResource IconOnlyRadioButtonStyle}"
+                            Margin="20,0"/>
+                    </StackPanel>
+
+                    <customControls:SearchBox
+                        Grid.Column="5"
+                        Margin="2"
+                        Width="255"
+                        Height="48"/>
+                </Grid>
+                <ScrollViewer Grid.Row="1"
+                              VerticalAlignment="Top"
+                              Margin="18,37,0,0"
+                              VerticalScrollBarVisibility="Auto">
+                    <WrapPanel>
+<customControls:LibraryItemCard
+    ImageSource="../Resources/brave.png"
+    Margin="0,0,20,0"
+    Title="Brave"/>
+<customControls:LibraryItemCard
+    ImageSource="../Resources/fortnite.jpg"
+    Margin="0,0,20,0"
+    Title="Fortnite"/>
+<customControls:LibraryShopCard/>
+                    </WrapPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

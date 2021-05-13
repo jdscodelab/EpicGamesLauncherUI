@@ -1,0 +1,158 @@
+﻿<Page x:Class="EpicGamesLauncher.Pages.SignInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EpicGamesLauncher.Pages"
+      xmlns:attachedProperties="clr-namespace:EpicGamesLauncher.Attached_Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="829" d:DesignWidth="1538"
+      Title="SignInPage">
+    <Grid>
+        <Border
+            MinHeight="745"
+            MinWidth="470"
+            Background="{StaticResource SearchBackgroundBrush}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Grid>
+                <Path
+                    Data="{StaticResource EpicIcon}"
+                    Margin="0,50.3"
+                    Style="{StaticResource EpicLogoStyle}"/>
+
+                <TextBlock
+                    Text="CHOOSE HOW TO SIGN IN TO YOUR EPIC ACCOUNT"
+                    FontFamily="Brutal Type"
+                    FontWeight="Bold"
+                    FontSize="12"
+                    Foreground="{StaticResource CaptionFontBrush}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="60,131,0,0"/>
+
+                <StackPanel
+                    Margin="0,166,0,0">
+                    <attachedProperties:LoginServiceButtons
+                        Content="SIGN IN WITH EPIC GAMES"
+                        IconHeight="25"
+                        IconWidth="22"
+                        Icon="{StaticResource EpicIcon}"
+                        IconBackground="{StaticResource EpicBackBrush}"
+                        IconBackgroundHover="{StaticResource EpicBackHoverBrush}"
+                        IconFill="{StaticResource SignInIconsBackBrush}"/>
+
+                    <attachedProperties:LoginServiceButtons
+                        IconHeight="19"
+                        IconWidth="19"
+                        Icon="{StaticResource FBIcon}"
+                        IconBackground="{DynamicResource FBBackBrush}"
+                        IconBackgroundHover="{DynamicResource FBBackHoverBrush}"
+                        IconFill="{DynamicResource SignInIconsBackBrush}"
+                        Content="SIGN IN WITH FACEBOOK"/>
+
+                    <attachedProperties:LoginServiceButtons
+                        IconHeight="19"
+                        IconWidth="19"
+                        ImageIcon="{DynamicResource GoogleImage}"
+                        IconBackground="{DynamicResource GoogleBackBrush}"
+                        IconBackgroundHover="{DynamicResource GoogleBackHoverBrush}"
+                        Content="SIGN IN WITH GOOGLE"/>
+
+                    <attachedProperties:LoginServiceButtons
+                        IconHeight="19"
+                        IconWidth="19"
+                        Icon="{StaticResource XBoxIcon}"
+                        IconBackground="{DynamicResource XBoxBackBrush}"
+                        IconBackgroundHover="{DynamicResource XBoxBackHoverBrush}"
+                        IconFill="{DynamicResource SignInIconsBackBrush}"
+                        Content="SIGN IN WITH XBOX LIVE"/>
+
+                    <attachedProperties:LoginServiceButtons
+                        IconHeight="23"
+                        IconWidth="23"
+                        Icon="{StaticResource PSIcon}"
+                        IconBackground="{DynamicResource PSBackBrush}"
+                        IconBackgroundHover="{DynamicResource PSBackHoverBrush}"
+                        IconFill="{DynamicResource SignInIconsBackBrush}"
+                        Content="SIGN IN WITH PLAYSTATION&#xD;&#xA;NETWORK"/>
+
+                    <attachedProperties:LoginServiceButtons
+                        IconHeight="40"
+                        IconWidth="65"
+                        Icon="{StaticResource NintendoIcon}"
+                        IconBackground="{DynamicResource NintendoBackBrush}"
+                        IconBackgroundHover="{DynamicResource NintendoBackHoverBrush}"
+                        IconFill="{DynamicResource SignInIconsBackBrush}"
+                        Content="SIGN IN WITH NINTENDO ACCOUNT"/>
+
+                    <attachedProperties:LoginServiceButtons
+                        IconHeight="21"
+                        IconWidth="21"
+                        Icon="{StaticResource SteamIcon}"
+                        IconBackground="{DynamicResource SteamBackBrush}"
+                        IconBackgroundHover="{DynamicResource SteamBackHoverBrush}"
+                        IconFill="{DynamicResource SignInIconsBackBrush}"
+                        Content="SIGN IN WITH STEAM"/>
+
+                    <attachedProperties:LoginServiceButtons
+                        IconHeight="15"
+                        IconWidth="15"
+                        Icon="{StaticResource AppleIcon}"
+                        IconBackground="{DynamicResource AppleBackBrush}"
+                        IconBackgroundHover="{DynamicResource AppleBackHoverBrush}"
+                        IconFill="{DynamicResource AppleIconBrush}"
+                        Content="SIGN IN WITH APPLE"/>
+
+                    <TextBlock
+                        Foreground="{StaticResource DisabledFontBrush}"
+                        FontFamily="Brutal Type"
+                        FontSize="14"
+                        TextAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0,12"
+                        LineHeight="20">
+                        <Run
+                            Text="Don't have an Epic Games account?"/>
+                            <Hyperlink
+                                Foreground="{StaticResource CaptionFontBrush}"
+                                FontWeight="Bold"
+                                TextDecorations="None">
+                                Sign Up
+                            </Hyperlink>
+                        <Run
+                            Text="or"/>
+                        <LineBreak/>
+                        <Hyperlink
+                            Foreground="{StaticResource CaptionFontBrush}"
+                            FontWeight="Bold"
+                            TextDecorations="None"
+                            Click="Hyperlink_OnClick">
+                            Sign In Later
+                        </Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Button
+            Content="{StaticResource SettingsIcon}"
+            FontSize="14"
+            HorizontalAlignment="Left"
+            Margin="39,0,0,35"
+            VerticalAlignment="Bottom"
+            Click="ButtonBase_OnClick">
+            <Button.Style>
+                <Style 
+                    TargetType="{x:Type Button}"
+                    BasedOn="{StaticResource IconOnlyButtonStyle}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                              Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource SettingsIconHoverBrush}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Page>

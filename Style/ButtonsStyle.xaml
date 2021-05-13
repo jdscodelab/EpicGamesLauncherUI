@@ -1,0 +1,424 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:attachedProperties="clr-namespace:EpicGamesLauncher.Attached_Properties">
+    <Style
+        TargetType="{x:Type attachedProperties:LoginServiceButtons}">
+        <Setter Property="Background" Value="{StaticResource SignInBackgroundBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource IconActiveBrush}"/>
+        <Setter Property="FontFamily" Value="Brutal Type"/>
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="350"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type attachedProperties:LoginServiceButtons}">
+                    <Border
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                x:Name="IconBackground"
+                                Background="{TemplateBinding IconBackground}"
+                                CornerRadius="3,0,0,3">
+                                <Grid>
+                                    <Path
+                                        Fill="{TemplateBinding IconFill}"
+                                        Data="{TemplateBinding Icon}"
+                                        Height="{TemplateBinding IconHeight}"
+                                        Width="{TemplateBinding IconWidth}"/>
+                                    <Image
+                                        Name="ImageIcon"
+                                        Source="{TemplateBinding ImageIcon}"
+                                        Stretch="Uniform"
+                                        Height="{TemplateBinding IconHeight}"
+                                        Width="{TemplateBinding IconWidth}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+
+                            <ContentPresenter
+                                Grid.Column="1"
+                                Margin="19,0,0,0"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger 
+                            SourceName="ImageIcon"
+                            Property="Source"
+                            Value="{x:Null}">
+                            <Setter
+                                TargetName="ImageIcon"
+                                Property="Visibility"
+                                Value="Collapsed"/>
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsMouseCaptured" Value="False"/>
+                            </MultiTrigger.Conditions>
+
+                            <Setter 
+                                Property="Background"
+                                TargetName="IconBackground"
+                                Value="{Binding IconBackgroundHover, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter Property="Background"
+                                    Value="{StaticResource SignInBackgroundMouseOverBrush}"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Button}"
+           x:Key="IconOnlyButtonStyle">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource SettingsIconBrush}"/>
+        <Setter Property="Height" Value="{Binding FontSize, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="Width" Value="{Binding FontSize, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+    BorderBrush="{TemplateBinding BorderBrush}"
+    BorderThickness="{TemplateBinding BorderThickness}"
+    Background="{TemplateBinding Background}">
+                        <Path
+        Fill="{TemplateBinding Foreground}"
+        Data="{TemplateBinding Content}"
+        Height="{TemplateBinding FontSize}"
+        Width="{TemplateBinding FontSize}"
+        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Storyboard x:Key="IconMouseOverEnterAnimation" SpeedRatio="5">
+        <ColorAnimation
+    Storyboard.TargetProperty="(TextBlock.Foreground).(Color)"
+    To="{StaticResource CaptionFontColor}"/>
+    </Storyboard>
+    <Storyboard x:Key="IconMouseOverExitAnimation" SpeedRatio="5">
+        <ColorAnimation
+            Storyboard.TargetProperty="(TextBlock.Foreground).(Color)"
+            To="{StaticResource InactiveFontColor}"/>
+    </Storyboard>
+    <Style TargetType="{x:Type RadioButton}"
+           x:Key="IconOnlyRadioButtonStyle">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource IconInactiveBrush}"/>
+        <Setter Property="Height" Value="{Binding FontSize, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="Width" Value="{Binding FontSize, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}">
+                        <Path
+                            x:Name="Path"
+                            Fill="{TemplateBinding Foreground}"
+                            Data="{TemplateBinding Content}"
+                            Height="{TemplateBinding FontSize}"
+                            Width="{TemplateBinding FontSize}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard
+                                    Storyboard="{StaticResource IconMouseOverEnterAnimation}"/>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard
+                                    Storyboard="{StaticResource IconMouseOverExitAnimation}"/>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Path"
+                                    Property="Fill"
+                                    Value="#FFFFFF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        TargetType="{x:Type Button}"
+        x:Key="PrimaryButtonStyle">
+        <Setter Property="Background" Value="{StaticResource PrimaryButtonBackgroundBrush}"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="68"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Brutal Type"/>
+        <Setter Property="Foreground" Value="{StaticResource CaptionFontBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+    Background="{TemplateBinding Background}"
+    CornerRadius="2">
+                        <ContentPresenter
+        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PrimaryButtonMouseOverBackgroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style
+        TargetType="{x:Type attachedProperties:SideNavigationMenu}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type attachedProperties:SideNavigationMenu}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ContentPresenter
+                            Content="{TemplateBinding MenuButtonsContainer}"/>
+
+                        <ContentPresenter
+                            Grid.Row="1"
+                            Content="{TemplateBinding FooterMenuButtonsContainer}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style
+        x:Key="SideNavigationCheckableMenuButtonsStyle"
+        TargetType="{x:Type attachedProperties:CheckableMenuButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource IconInactiveBrush}"/>
+        <Setter Property="GroupName" Value="MenuButtons"/>
+        <Setter Property="Height" Value="68"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type attachedProperties:CheckableMenuButton}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="76"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path
+    Name="Icon"
+    Fill="{TemplateBinding Foreground}"
+    Data="{TemplateBinding Icon}"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Center"
+    Width="23"/>
+
+                            <TextBlock
+    Grid.Column="1"
+    Name="text"
+    Text="{TemplateBinding Content}"
+    TextWrapping="Wrap"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Margin="36,0,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Icon" Property="Fill" Value="{StaticResource IconActiveBrush}"/>
+                            <Setter TargetName="text" Property="Foreground" Value="{StaticResource CaptionFontBrush}"/>
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard SpeedRatio="3">
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="(Foreground).Color"
+                                            From="{StaticResource IconInactiveColor}"
+                                            To="{StaticResource IconActiveColor}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard SpeedRatio="3">
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="(Foreground).Color"
+                                            From="{StaticResource IconActiveColor}"
+                                            To="{StaticResource IconInactiveColor}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="SideNavigationBasicMenuButtonsStyle"
+        TargetType="{x:Type attachedProperties:BasicMenuButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="{StaticResource IconInactiveBrush}"/>
+        <Setter Property="Height" Value="68"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type attachedProperties:BasicMenuButton}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="76"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path
+    Name="Icon"
+    Fill="{TemplateBinding Foreground}"
+    Data="{TemplateBinding Icon}"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Center"
+    Width="23"/>
+
+                            <TextBlock
+    Grid.Column="1"
+    Name="text"
+    Text="{TemplateBinding Content}"
+    TextWrapping="Wrap"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Margin="36,0,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Icon" Property="Fill" Value="{StaticResource IconActiveBrush}"/>
+                            <Setter TargetName="text" Property="Foreground" Value="{StaticResource CaptionFontBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="SettingsNavBackButtonStyle"
+        TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,2"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Foreground" Value="{StaticResource BackIconBrush}"/>
+        <Setter Property="FontFamily" Value="Brutal Type"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Height" Value="72"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Content" Value="SETTINGS"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Name="Bd"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Path
+                                Name="BackIcon"
+                                Height="15"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Data="{StaticResource BackIcon}"
+                                Fill="{StaticResource BackIconBrush}"
+                                Stretch="Uniform"/>
+
+                            <Rectangle
+                                Grid.Column="1"
+                                Fill="{StaticResource BorderBrush}"
+                                Width="2"
+                                Height="30"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                            <ContentPresenter
+                                Grid.Column="2"
+                                Margin="20,0"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ButtonBackgroundHoverBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource CaptionFontBrush}"/>
+                            <Setter TargetName="BackIcon" Property="Fill" Value="{StaticResource IconActiveBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

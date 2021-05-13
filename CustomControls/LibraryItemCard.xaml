@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="EpicGamesLauncher.CustomControls.LibraryItemCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EpicGamesLauncher.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="213"
+             Height="Auto"
+             Width="213"
+             Name="This">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource SearchBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource CaptionFontBrush}"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Brutal Type"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="285"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0"
+                                    CornerRadius="3">
+                                <Border.Background>
+                                    <ImageBrush
+                                        ImageSource="{Binding ImageSource, ElementName=This}"
+                                        Stretch="UniformToFill"/>
+                                </Border.Background>
+                            </Border>
+                            <StackPanel
+                                Grid.Row="1"
+                                Orientation="Vertical"
+                                VerticalAlignment="Center"
+                                Margin="0,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="38"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Text="{Binding Title, ElementName=This}"
+                                        FontSize="15"
+                                        TextTrimming="CharacterEllipsis"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"/>
+
+                                    <Path
+                                        Grid.Column="1"
+                                        Fill="{StaticResource IconInactiveBrush}"
+                                        Data="{StaticResource MoreIcon}"
+                                        VerticalAlignment="Center"
+                                        Width="15"/>
+                                </Grid>
+
+                                <TextBlock
+                                    Name="SignIn"
+                                    Margin="0,4"
+                                    Foreground="{StaticResource InactiveFontBrush}"
+                                    Text="Sign In"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Visibility="Hidden"/>
+                            </StackPanel>
+
+                            <Border
+                                Grid.Row="0"
+                                Name="MaskBorder"
+                                Background="#FFFFFF"
+                                CornerRadius="3"
+                                Opacity="0"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard SpeedRatio="8">
+                                            <DoubleAnimation
+                                                Storyboard.TargetName="MaskBorder"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To=".1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard SpeedRatio="8">
+                                            <DoubleAnimation
+                                                Storyboard.TargetName="MaskBorder"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+
+                                <Setter TargetName="SignIn" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Button
+     Background="Transparent"
+     VerticalContentAlignment="Top"/>
+</UserControl>

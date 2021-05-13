@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="Segoe MDL2 Assets">pack://application;,,,/Fonts/#Segoe MDL2 Assets</FontFamily>
+
+    <!-- Font used for minimize, maximize, restore down, and close button glyphs -->
+    <Style TargetType="{x:Type Button}" x:Key="ButtonTextStyle">
+        <Setter Property="FontFamily" Value="{StaticResource Segoe MDL2 Assets}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+</ResourceDictionary>

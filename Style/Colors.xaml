@@ -1,0 +1,286 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Active Window Border Color -->
+    <Color x:Key="WindowBorderColor">#0F0F0F</Color>
+    <SolidColorBrush x:Key="WindowBorderBrush" Color="{StaticResource WindowBorderColor}"/>
+
+    <!-- Inactive Window Border Color -->
+    <Color x:Key="InactiveWindowColor">#414141</Color>
+    <SolidColorBrush x:Key="InactiveWindowBrush" Color="{StaticResource InactiveWindowColor}" />
+
+    <!-- Inactive Window Button Color -->
+    <Color x:Key="InactiveWindowButtonColor">#838383</Color>
+    <SolidColorBrush x:Key="InactiveWindowButtonBrush" Color="{StaticResource InactiveWindowButtonColor}" />
+    
+    <!-- Inactive Font Color -->
+    <Color x:Key="InactiveFontColor">#838383</Color>
+    <SolidColorBrush x:Key="InactiveFontBrush" Color="{StaticResource InactiveFontColor}" />
+
+    <!-- Inactive Font Color -->
+    <Color x:Key="DisabledFontColor">#727272</Color>
+    <SolidColorBrush x:Key="DisabledFontBrush" Color="{StaticResource DisabledFontColor}" />
+
+    <!-- Main Window Background Color -->
+    <Color x:Key="MainBackgroundColor">#121212</Color>
+    <SolidColorBrush x:Key="MainBackgroundBrush" Color="{StaticResource MainBackgroundColor}"/>
+
+    <!-- Caption Color -->
+    <Color x:Key="CaptionColor">#141414</Color>
+    <SolidColorBrush x:Key="CaptionBrush" Color="{StaticResource CaptionColor}"/>
+    
+    <!-- Caption Font Color -->
+    <Color x:Key="CaptionFontColor">White</Color>
+    <SolidColorBrush x:Key="CaptionFontBrush" Color="{StaticResource CaptionFontColor}"/>
+
+    <!-- Caption Button Mouse Over Color -->
+    <Color x:Key="CaptionButtonMouseOverColor">#54B1DD</Color>
+    <SolidColorBrush x:Key="CaptionButtonMouseOverBrush" Color="{StaticResource CaptionButtonMouseOverColor}"/>
+
+    <!-- Caption Close Button Mouse Over Color -->
+    <Color x:Key="CaptionCloseButtonMouseOverColor">#E62E4C</Color>
+    <SolidColorBrush x:Key="CaptionCloseButtonMouseOverBrush" Color="{StaticResource CaptionCloseButtonMouseOverColor}"/>
+
+    <!-- Caption Button Clicked Color -->
+    <!--<Color x:Key="CaptionButtonDownColor">#2B2B2B</Color>-->
+    <Color x:Key="CaptionButtonDownColor">#54B1DD</Color>
+    <SolidColorBrush x:Key="CaptionButtonDownBrush" Color="{StaticResource CaptionButtonDownColor}"/>
+    
+    <!-- Caption Close Button Clicked Color -->
+    <!--<Color x:Key="CaptionCloseButtonDownColor">#F17079</Color>-->
+    <Color x:Key="CaptionCloseButtonDownColor">#E62E4C</Color>
+    <SolidColorBrush x:Key="CaptionCloseButtonDownBrush" Color="{StaticResource CaptionCloseButtonDownColor}"/>
+
+    <!--ProgressBar Background Brush-->
+    <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE6E6E6"/>
+
+    <!--ProgressBar Progress Brush-->
+    <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF1C61F3"/>
+
+    <!--ProgressBar Stripe Brush-->
+    <SolidColorBrush x:Key="ProgressBar.Stripe" Color="#33FFFFFF"/>
+
+    <!-- Viewbar Background Color -->
+    <Color x:Key="ViewBarBackgroundColor">#1A1A1A</Color>
+    <SolidColorBrush x:Key="ViewBarBackgroundBrush" Color="{StaticResource ViewBarBackgroundColor}"/>
+
+    <!-- Green Theme Accent Color -->
+    <Color x:Key="GreenAccentColor">#0E7A0D</Color>
+    <SolidColorBrush x:Key="GreenAccentBrush" Color="{StaticResource GreenAccentColor}"/>
+
+    <!-- Blue Theme Accent Color -->
+    <Color x:Key="BlueAccentColor">#006FCD</Color>
+    <SolidColorBrush x:Key="BlueAccentBrush" Color="{StaticResource BlueAccentColor}"/>
+
+    <!--#region Sign In Page Brushes-->
+    <!--SignIn Button Background Color-->
+    <Color x:Key="SignInBackgroundColor">#2B2B2B</Color>
+    <SolidColorBrush x:Key="SignInBackgroundBrush" Color="{StaticResource SignInBackgroundColor}"/>
+
+    <!--SignIn Button Hover Background Color-->
+    <Color x:Key="SignInBackgroundMouseOverColor">#363636</Color>
+    <SolidColorBrush x:Key="SignInBackgroundMouseOverBrush" Color="{StaticResource SignInBackgroundMouseOverColor}"/>
+
+    <!--#region Icon Brushes-->
+    <!--SignIn Page Icon Fill Color-->
+    <Color x:Key="SignInIconsColor">#FFFFFF</Color>
+    <SolidColorBrush x:Key="SignInIconsBackBrush" Color="{StaticResource SignInIconsColor}"/>
+
+    <!--Epic Icon Background Color-->
+    <Color x:Key="EpicBackColor">#353535</Color>
+    <SolidColorBrush x:Key="EpicBackBrush" Color="{StaticResource EpicBackColor}"/>
+
+    <!--Epic Icon Hover Background Color-->
+    <Color x:Key="EpicBackHoverColor">#3E3D3D</Color>
+    <SolidColorBrush x:Key="EpicBackHoverBrush" Color="{StaticResource EpicBackHoverColor}"/>
+
+    <!--Facebook Icon Background Color-->
+    <Color x:Key="FBBackColor">#3261A3</Color>
+    <SolidColorBrush x:Key="FBBackBrush" Color="{StaticResource FBBackColor}"/>
+
+    <!--Facebook Icon Hover Background Color-->
+    <Color x:Key="FBBackHoverColor">#4771AB</Color>
+    <SolidColorBrush x:Key="FBBackHoverBrush" Color="{StaticResource FBBackHoverColor}"/>
+
+    <!--Google Icon Fill Color-->
+    <LinearGradientBrush x:Key="GoogleIconBrush" StartPoint="0,0" EndPoint=".5,1">
+        <GradientStop Color="#D82326" Offset="0.0" />
+        <GradientStop Color="#F4C400" Offset="0.45" />
+        <GradientStop Color="#43AD41" Offset="0.75" />
+        <GradientStop Color="#5D80BF" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!--Google Icon Background Color-->
+    <Color x:Key="GoogleBackColor">#FEFDFD</Color>
+    <SolidColorBrush x:Key="GoogleBackBrush" Color="{StaticResource GoogleBackColor}"/>
+
+    <!--Google Icon Hover Background Color-->
+    <Color x:Key="GoogleBackHoverColor">#FEFDFD</Color>
+    <SolidColorBrush x:Key="GoogleBackHoverBrush" Color="{StaticResource GoogleBackHoverColor}"/>
+    <!--#endregion-->
+
+    <!--XBox Icon Background Color-->
+    <Color x:Key="XBoxBackColor">#027D00</Color>
+    <SolidColorBrush x:Key="XBoxBackBrush" Color="{StaticResource XBoxBackColor}"/>
+
+    <!--XBox Icon Hover Background Color-->
+    <Color x:Key="XBoxBackHoverColor">#0B8F08</Color>
+    <SolidColorBrush x:Key="XBoxBackHoverBrush" Color="{StaticResource XBoxBackHoverColor}"/>
+
+    <!--PS Icon Background Color-->
+    <Color x:Key="PSBackColor">#0063C5</Color>
+    <SolidColorBrush x:Key="PSBackBrush" Color="{StaticResource PSBackColor}"/>
+
+    <!--PS Icon Hover Background Color-->
+    <Color x:Key="PSBackHoverColor">#1978D6</Color>
+    <SolidColorBrush x:Key="PSBackHoverBrush" Color="{StaticResource PSBackHoverColor}"/>
+
+    <!--Nintendo Icon Background Color-->
+    <Color x:Key="NintendoBackColor">#E90000</Color>
+    <SolidColorBrush x:Key="NintendoBackBrush" Color="{StaticResource NintendoBackColor}"/>
+
+    <!--Nintendo Icon Hover Background Color-->
+    <Color x:Key="NintendoBackHoverColor">#EC4949</Color>
+    <SolidColorBrush x:Key="NintendoBackHoverBrush" Color="{StaticResource NintendoBackHoverColor}"/>
+
+    <!--Steam Icon Background Color-->
+    <Color x:Key="SteamBackColor">#145C8F</Color>
+    <SolidColorBrush x:Key="SteamBackBrush" Color="{StaticResource SteamBackColor}"/>
+
+    <!--Steam Icon Hover Background Color-->
+    <Color x:Key="SteamBackHoverColor">#1A79BC</Color>
+    <SolidColorBrush x:Key="SteamBackHoverBrush" Color="{StaticResource SteamBackHoverColor}"/>
+
+    <!--Apple Icon Fill Color-->
+    <Color x:Key="AppleIconColor">#000000</Color>
+    <SolidColorBrush x:Key="AppleIconBrush" Color="{StaticResource AppleIconColor}"/>
+
+    <!--Apple Icon Background Color-->
+    <Color x:Key="AppleBackColor">#FFFFFF</Color>
+    <SolidColorBrush x:Key="AppleBackBrush" Color="{StaticResource AppleBackColor}"/>
+
+    <!--Apple Icon Hover Background Color-->
+    <Color x:Key="AppleBackHoverColor">#FFFFFF</Color>
+    <SolidColorBrush x:Key="AppleBackHoverBrush" Color="{StaticResource AppleBackHoverColor}"/>
+
+    <!--Settings Icon Fill Color-->
+    <Color x:Key="SettingsIconColor">#FFFFFF</Color>
+    <SolidColorBrush x:Key="SettingsIconBrush" Color="{StaticResource SettingsIconColor}"/>
+
+    <!--Icon Background Color-->
+    <Color x:Key="SettingsIconHoverColor">#0066DA</Color>
+    <SolidColorBrush x:Key="SettingsIconHoverBrush" Color="{StaticResource SettingsIconHoverColor}"/>
+
+    <!--Store Page Popup Background Color-->
+    <Color x:Key="PopupBackgroundColor">#6C5BB7</Color>
+    <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PopupBackgroundColor}"/>
+
+    <!--Primary Button Background Color-->
+    <Color x:Key="PrimaryButtonBackgroundColor">#5847A3</Color>
+    <SolidColorBrush x:Key="PrimaryButtonBackgroundBrush" Color="{StaticResource PrimaryButtonBackgroundColor}"/>
+
+    <!--Primary Button Mouser Over Background Color-->
+    <Color x:Key="PrimaryButtonMouseOverBackgroundColor">#4E3D99</Color>
+    <SolidColorBrush x:Key="PrimaryButtonMouseOverBackgroundBrush" Color="{StaticResource PrimaryButtonMouseOverBackgroundColor}"/>
+    <!--#endregion-->
+
+    <!--#region Settings Page Brushes-->
+    <!-- Border Brush Color -->
+    <Color x:Key="BorderColor">#363636</Color>
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
+    <!--#endregion-->
+
+    <!--Back Icon Color-->
+    <Color x:Key="BackIconColor">#7D7D7D</Color>
+    <SolidColorBrush x:Key="BackIconBrush" Color="{StaticResource BackIconColor}"/>
+
+    <!--Button Background Hover Color-->
+    <Color x:Key="ButtonBackgroundHoverColor">#2A2A2A</Color>
+    <SolidColorBrush x:Key="ButtonBackgroundHoverBrush" Color="{StaticResource ButtonBackgroundHoverColor}"/>
+
+    <!--#region Store Page Brushes-->
+    <Color x:Key="IconInactiveColor">#838383</Color>
+    <SolidColorBrush x:Key="IconInactiveBrush" Color="{StaticResource IconInactiveColor}"/>
+
+    <Color x:Key="IconActiveColor">White</Color>
+    <SolidColorBrush x:Key="IconActiveBrush" Color="{StaticResource IconActiveColor}"/>
+
+    <!--Search Background Color-->
+    <Color x:Key="SearchBackgroundColor">#202020</Color>
+    <SolidColorBrush x:Key="SearchBackgroundBrush" Color="{StaticResource SearchBackgroundColor}"/>
+    <!--#endregion-->
+
+    <!--#region ComboBox Brushes-->
+    <SolidColorBrush x:Key="ComboBox.Static.Background" Color="#6C6D6D"/>
+
+    <SolidColorBrush x:Key="ComboBox.Static.Border" Color="#FFACACAC"/>
+
+    <SolidColorBrush x:Key="ComboBox.Static.Editable.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Editable.Border" Color="#FFABADB3"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Editable.Button.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Editable.Button.Border" Color="Transparent"/>
+    <SolidColorBrush x:Key="ComboBox.MouseOver.Glyph" Color="#FF000000"/>
+    <LinearGradientBrush x:Key="ComboBox.MouseOver.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FFECF4FC" Offset="0.0"/>
+        <GradientStop Color="#FFDCECFC" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ComboBox.MouseOver.Border" Color="White"/>
+    <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Border" Color="White"/>
+    <LinearGradientBrush x:Key="ComboBox.MouseOver.Editable.Button.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FFEBF4FC" Offset="0.0"/>
+        <GradientStop Color="#FFDCECFC" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ComboBox.MouseOver.Editable.Button.Border" Color="White"/>
+    <SolidColorBrush x:Key="ComboBox.Pressed.Glyph" Color="#FF000000"/>
+
+    <LinearGradientBrush x:Key="ComboBox.Pressed.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FFDAECFC" Offset="0.0"/>
+        <GradientStop Color="#FFC4E0FC" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <!--<SolidColorBrush x:Key="ComboBox.Pressed.Border" Color="#FF569DE5"/>-->
+    <SolidColorBrush x:Key="ComboBox.Pressed.Border" Color="#FFFFFF"/>
+
+    <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Border" Color="#FF569DE5"/>
+    <LinearGradientBrush x:Key="ComboBox.Pressed.Editable.Button.Background" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FFDAEBFC" Offset="0.0"/>
+        <GradientStop Color="#FFC4E0FC" Offset="1.0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ComboBox.Pressed.Editable.Button.Border" Color="#FF569DE5"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.Glyph" Color="#FFBFBFBF"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.Background" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.Border" Color="#FFD9D9D9"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Border" Color="#FFBFBFBF"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Button.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.Editable.Button.Border" Color="Transparent"/>
+    <!--<SolidColorBrush x:Key="ComboBox.Static.Glyph" Color="#FF606060"/>-->
+    <SolidColorBrush x:Key="ComboBox.Static.Glyph" Color="White"/>
+    <SolidColorBrush x:Key="TextBox.Static.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Background" Color="#5C5C5C"/>
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Border" Color="#5C5C5C"/>
+    <!--<SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" Color="#3D26A0DA"/>-->
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" Color="#5C5C5C"/>
+
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Border" Color="#5C5C5C"/>
+
+    <!--<SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" Color="#2E0080FF"/>-->
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" Color="#5C5C5C"/>
+
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Border" Color="#5C5C5C"/>
+
+    <!--<SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Background" Color="#3DDADADA"/>-->
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Background" Color="#5C5C5C"/>
+
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Border" Color="#5C5C5C"/>
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewFocus.Border" Color="#5C5C5C"/>
+
+    <!--<SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" Color="#5426A0DA"/>-->
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" Color="#5C5C5C"/>
+
+    <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Border" Color="#5C5C5C"/>
+    <!--#endregion-->
+</ResourceDictionary>
